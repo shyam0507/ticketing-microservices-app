@@ -90,7 +90,7 @@ it('returns a 201 with valid inputs', async () => {
   });
 
   expect(stripeCharge).toBeDefined();
-  expect(stripeCharge!.currency).toEqual('inr');
+  expect(stripeCharge!.currency).toEqual('usd');
 
   const payment = await Payment.findOne({
     orderId: order.id,
@@ -102,5 +102,5 @@ it('returns a 201 with valid inputs', async () => {
   // const chargeOptions = (stripe.charges.create as jest.Mock).mock.calls[0][0];
   // expect(chargeOptions.source).toEqual(token);
   // expect(chargeOptions.amount).toEqual(order.price * 100);
-  // expect(chargeOptions.currency).toEqual('inr');
+  // expect(chargeOptions.currency).toEqual('usd');
 });
